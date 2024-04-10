@@ -7,7 +7,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, filte
 
 load_dotenv()
 
-TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
+TELEGRAM_TOKEN_BOT = os.getenv('TELEGRAM_TOKEN_BOT')
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
@@ -57,7 +57,7 @@ async def contact(update: Update, context: ContextTypes.DEFAULT_TYPE):
         """)
 
 
-app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
+app = ApplicationBuilder().token(TELEGRAM_TOKEN_BOT).build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("hello", hello))
