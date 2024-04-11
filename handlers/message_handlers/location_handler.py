@@ -10,7 +10,7 @@ class LocationHandler(BaseHandler):
         location_handler = (MessageHandler(filters.LOCATION, cls.callback))
         app.add_handler(location_handler)
 
-    @classmethod
+    @staticmethod
     async def callback(cls: Update, context: ContextTypes.DEFAULT_TYPE):
         lat = cls.message.location.latitude
         lon = cls.message.location.longitude

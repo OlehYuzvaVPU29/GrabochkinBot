@@ -10,7 +10,7 @@ class ContactHandler(BaseHandler):
         contact_handler = (MessageHandler(filters.CONTACT, cls.callback))
         app.add_handler(contact_handler)
 
-    @classmethod
+    @staticmethod
     async def callback(cls: Update, context: ContextTypes.DEFAULT_TYPE):
         user_id = cls.message.contact.user_id
         first_name = cls.message.contact.first_name
@@ -20,5 +20,3 @@ class ContactHandler(BaseHandler):
             first_name = {first_name}
             last_name = {last_name}
             """)
-
-
