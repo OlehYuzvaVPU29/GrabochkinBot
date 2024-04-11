@@ -7,7 +7,8 @@ from handlers.base_handler import BaseHandler
 class ByeHandler(BaseHandler):
     @classmethod
     def register(cls, app):
-        app.add_handler(CommandHandler("bye", cls.callback))
+        bye_handler = CommandHandler('bye', cls.callback)
+        app.add_handler(bye_handler)
 
     @staticmethod
     async def callback(cls: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
