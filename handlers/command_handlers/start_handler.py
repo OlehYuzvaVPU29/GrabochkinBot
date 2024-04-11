@@ -14,8 +14,9 @@ class StartHandler(BaseHandler):
     async def callback(cls: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         keyboard = [
             [KeyboardButton('/hello'), KeyboardButton('/author')],
-            [KeyboardButton('/bye'), KeyboardButton('Share location', request_location=True)],
-            [KeyboardButton('Share contact', request_contact=True)]
+            [KeyboardButton('/bye'), KeyboardButton('/begin')],
+            [KeyboardButton('Share location', request_location=True),
+             KeyboardButton('Share contact', request_contact=True)]
         ]
         reply_markup = ReplyKeyboardMarkup(keyboard, one_time_keyboard=True)
 
