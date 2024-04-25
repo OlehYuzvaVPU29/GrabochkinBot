@@ -14,7 +14,7 @@ class StartHandler(BaseHandler):
     async def callback(cls: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         keyboard = [
             [KeyboardButton('/hello'), KeyboardButton('/author')],
-            [KeyboardButton('/bye'), KeyboardButton('/begin')],
+            [KeyboardButton('/bye'), KeyboardButton('/begin'), KeyboardButton('/startgame')],
             [KeyboardButton('Share location', request_location=True),
              KeyboardButton('Share contact', request_contact=True)]
         ]
