@@ -13,8 +13,8 @@ class StartHandler(BaseHandler):
     @staticmethod
     async def callback(cls: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         keyboard = [
-            [KeyboardButton('/hello'), KeyboardButton('/author')],
-            [KeyboardButton('/bye'), KeyboardButton('/begin')],
+            [KeyboardButton('/hello'), KeyboardButton('/author'), KeyboardButton('/bye')],
+            [KeyboardButton('/begin'), KeyboardButton('/user_register')],
             [KeyboardButton('Share location', request_location=True),
              KeyboardButton('Share contact', request_contact=True)]
         ]
