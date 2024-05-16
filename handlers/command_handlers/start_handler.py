@@ -14,12 +14,12 @@ class StartHandler(BaseHandler):
     async def callback(cls: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         keyboard = [
             [KeyboardButton('/hello'), KeyboardButton('/author')],
-            [KeyboardButton('/bye'), KeyboardButton('/begin')],
+            [KeyboardButton('/bye'), KeyboardButton('/begin'), KeyboardButton('/poll_favourite_subject')],
             [KeyboardButton('Share location', request_location=True),
              KeyboardButton('Share contact', request_contact=True)]
         ]
         reply_markup = ReplyKeyboardMarkup(keyboard, one_time_keyboard=True)
 
         await cls.message.reply_text(
-            f'Привіт {cls.effective_user.first_name}',
+            f'Привіт, ти почав цього бота {cls.effective_user.first_name}',
             reply_markup=reply_markup)
