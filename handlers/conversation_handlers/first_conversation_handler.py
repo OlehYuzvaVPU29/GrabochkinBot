@@ -38,7 +38,8 @@ class FirstConversationHandler(BaseHandler):
 
     @staticmethod
     async def exit(update: Update, context: ContextTypes.DEFAULT_TYPE):
-        await update.message.reply_text(f'Ви вийшли з розмови.')
+        await update.message.reply_text(f'Ви вийшли з розмови.\n'
+                                        f'Натисни /start, щоб почати бота спочатку.')
 
         return ConversationHandler.END
 
