@@ -1,4 +1,4 @@
-from telegram import Update, KeyboardButton, ReplyKeyboardMarkup, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import Update, KeyboardButton, ReplyKeyboardMarkup
 from telegram.constants import ParseMode
 from telegram.ext import CommandHandler, ContextTypes
 
@@ -33,13 +33,6 @@ class StartHandler(BaseHandler):
             ]
             reply_markup = ReplyKeyboardMarkup(keyboard, one_time_keyboard=True)
 
-            inline_button = InlineKeyboardButton(
-                "Перейти на Хамстер Комбат",
-                url="https://t.me/hamster_kombat_bot?start=kentId646771905"
-            )
-
-            inline_markup = InlineKeyboardMarkup([[inline_button]])
-
             first_start_message = "||Правда, це після останнього його запуску\.||"
 
             await update.message.reply_text(
@@ -47,9 +40,4 @@ class StartHandler(BaseHandler):
                 f" ви почали цього бота в 1\-ий раз\!\n{first_start_message}",
                 reply_markup=reply_markup,
                 parse_mode=ParseMode.MARKDOWN_V2
-            )
-
-            await update.message.reply_text(
-                'Можете будь-ласка перейти по моїй рефералці на Хамстер Комбат:',
-                reply_markup=inline_markup
             )
